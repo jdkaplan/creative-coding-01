@@ -1,17 +1,22 @@
-const fourHundred = 400;
-const fourFifths = 4 / 5;
-const zero = 0;
-const angle = 3.14 / 6;
-const half = 1 / 2;
+const zero = +'';
+const one = [zero].length;
+const two = one + one;
+const three = "two".length;
+const four = "four".length;
+const five = "three".length;
+const fourHundred = two * two * two * two * five * five;
+const fourFifths = two * two / five;
+const half = one / two;
+
 function setup() {
     let brown = color("brown");
 
     createCanvas(fourHundred, fourHundred);
-    background(220);
+    background(fourHundred / two);
 
     push();
-    translate(fourHundred / 2, 0);
-    tree(100, brown);
+    translate(fourHundred / two, zero);
+    tree(fourHundred / four, brown);
     pop();
 }
 
@@ -19,14 +24,14 @@ function draw() { }
 
 function tree(branchLength, branchColor) {
     let green = color("green");
-    if (branchLength < 1) {
+    if (branchLength < one) {
         return;
     }
 
     stroke(branchColor)
 
     strokeCap(SQUARE);
-    strokeWeight(2);
+    strokeWeight(two);
 
     line(zero, zero, zero, branchLength);
 
@@ -35,8 +40,8 @@ function tree(branchLength, branchColor) {
 
     {
         branchColor = lerpColor(branchColor, green, half)
-        branchLength = branchLength * fourFifths * random(0.75, 1);
-        let angle = random(3.14 / 12, 3.14 / 4);
+        branchLength = branchLength * fourFifths * random(three / four, one);
+        let angle = random(one / four, three / four);
         {
             push();
             rotate(angle);
